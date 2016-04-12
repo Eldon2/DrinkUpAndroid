@@ -107,7 +107,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         MY_PERMISSIONS_REQUEST_LOCATION);
             }
         } else {
-            myLocation = LocationServices.FusedLocationApi.getLastLocation(mClient);
+            performLocationCheck();
         }
     }
 
@@ -116,10 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         switch(requestCode) {
             case MY_PERMISSIONS_REQUEST_LOCATION: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED){
-                        myLocation = LocationServices.FusedLocationApi.getLastLocation(mClient);
-                    }
+                    performLocationCheck();
                 } else {
                     // TODO: go to the next activity
                     Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT);
