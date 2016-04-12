@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DrinkUp</string>
     <string name="title_activity_maps">DrinkUp!</string>
+    <string name="maps_perm_req">In order to find bars near you, DrinkUp! needs to access your location.</string>
+    <string name = "maps_perm_title">Location permission</string>
+    <string name="maps_perm_neut">I understand</string>
 </resources>
