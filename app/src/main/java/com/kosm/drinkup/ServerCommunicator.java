@@ -2,7 +2,11 @@ package com.kosm.drinkup;
 
 import android.location.Location;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.net.URL;
 
@@ -18,6 +22,8 @@ public class ServerCommunicator extends AsyncTask<URL, Void, Void> {
     public void getData(){
 
     }
+
     public void postLocation(Location myLocation){
+
     }
 }

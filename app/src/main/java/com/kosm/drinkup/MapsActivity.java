@@ -27,6 +27,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
 
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 1;
+    private String TAG = this.getClass().getSimpleName();
 
     private GoogleMap mMap;
     private GoogleApiClient mClient;
@@ -118,7 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     performLocationCheck();
                 } else {
-                    // TODO: go to the next activity
+                    // TODO: handle disallowed permission
                     Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT);
                 }
                 return;
